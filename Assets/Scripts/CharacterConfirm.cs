@@ -22,7 +22,6 @@ public class CharacterConfirm : MonoBehaviour
             if (PlayerSelection.P1Ok == true && PlayerSelectionP2.P2Ok == true)
             {
                 FindObjectOfType<AudioManager>().Stop("MainMenuTheme");
-                FindObjectOfType<AudioManager>().Stop("CharacterSelectTheme");
                 SceneManager.LoadScene("Stage Select");
             }
 

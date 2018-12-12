@@ -19,6 +19,10 @@ public class StageSelect : MonoBehaviour
     public GameObject SnowyStageOn;
     public GameObject SnowStageOff;
 
+
+    public GameObject SnowStageName;
+    public GameObject GrassStageName;
+
     bool playerIndexSet = false;
     PlayerIndex playerIndex;
     GamePadState state;
@@ -26,7 +30,6 @@ public class StageSelect : MonoBehaviour
 
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("MainMenuTheme");
 
         theText = GetComponent<TextMeshProUGUI>();
     }
@@ -60,7 +63,8 @@ public class StageSelect : MonoBehaviour
             SnowyStageOn.SetActive(false);
             SnowStageOff.SetActive(true);
 
-            //theText.text = "Grassy Field";
+            //GrassStageName.SetActive(true);
+            //SnowStageName.SetActive(false);
 
         }
 
@@ -72,7 +76,8 @@ public class StageSelect : MonoBehaviour
             SnowyStageOn.SetActive(true);
             SnowStageOff.SetActive(false);
 
-            //theText.text = "Snowy Field";
+            //GrassStageName.SetActive(false);
+            //SnowStageName.SetActive(true);
 
         }
 
@@ -112,8 +117,7 @@ public class StageSelect : MonoBehaviour
 
             if (index == 0)
             {
-                FindObjectOfType<AudioManager>().Stop("MainMenuTheme");
-                FindObjectOfType<AudioManager>().Play("CharacterSelectTheme");
+                FindObjectOfType<AudioManager>().Stop("CharacterSelectTheme");
                 SceneManager.LoadScene("Game");
 
 
@@ -122,8 +126,7 @@ public class StageSelect : MonoBehaviour
             if (index == 1)
             {
 
-                FindObjectOfType<AudioManager>().Stop("MainMenuTheme");
-                FindObjectOfType<AudioManager>().Play("CharacterSelectTheme");
+                FindObjectOfType<AudioManager>().Stop("CharacterSelectTheme");
                 SceneManager.LoadScene("Game");
 
             }
